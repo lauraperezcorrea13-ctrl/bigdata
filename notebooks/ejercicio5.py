@@ -21,8 +21,8 @@ class PromedioActas(MRJob):
         # INICIA TU CODIGO AQUI
         # Desempacamos la tupla (votos, 1) que llego del Mapper
         for votos, un_acta in valores_tuplas:
-            suma_total += None  # Suma los votos
-            cantidad_mesas += None # Suma las actas (unos)
+            suma_total += votos  # Suma los votos
+            cantidad_mesas += un_acta # Suma las actas (unos)
 
         promedio = suma_total / cantidad_mesas
         yield candidato, round(promedio, 2)
